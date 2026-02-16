@@ -9,108 +9,158 @@
 
 <body>
 
-<header role="banner">
+<header>
   <div>
-    <img src="img/intel-header-logo.svg" alt="Intel corporate logo" />
-    <h1>Sustainability Through the Ages</h1>
-    <p>
+    <img src="img/intel-header-logo.svg" alt="Intel Logo" />
+
+    <h1 id="title">Sustainability Through the Ages</h1>
+
+    <p id="subtitle">
       Explore Intel's journey through time, discovering how innovation
       has shaped a more sustainable future.
     </p>
+
+    <!-- Language Toggle -->
+    <button id="langToggle" class="lang-toggle">
+      العربية
+    </button>
+
   </div>
 </header>
 
 <main>
 
-<section aria-label="Intel Sustainability Timeline">
+<section aria-label="Intel Timeline">
 
-  <article class="card" tabindex="0">
+  <!-- CARD -->
+  <article class="card">
     <h2>1968</h2>
     <h3>Intel Founded</h3>
+
     <div class="img-hover">
       <img src="img/1.jpg" loading="lazy" class="lazy-img"
-           alt="Early Intel team and founding era">
-      <div class="img-overlay" aria-hidden="true">
-        <p>Intel is founded, starting decades of innovation and technology leadership.</p>
+           alt="Intel founding era">
+      <div class="img-overlay">
+        <p>
+          Intel is founded, starting decades of innovation and technology leadership.
+        </p>
       </div>
     </div>
   </article>
 
-  <article class="card" tabindex="0">
+  <!-- CARD -->
+  <article class="card">
     <h2>1971</h2>
     <h3>First Microprocessor</h3>
+
     <div class="img-hover">
       <img src="img/2.jpg" loading="lazy" class="lazy-img"
-           alt="Intel 4004 microprocessor chip">
-      <div class="img-overlay" aria-hidden="true">
-        <p>Intel debuts the 4004, the world's first commercial microprocessor.</p>
+           alt="Intel 4004 processor">
+      <div class="img-overlay">
+        <p>
+          Intel debuts the 4004, the world's first commercial microprocessor.
+        </p>
       </div>
     </div>
   </article>
 
-  <article class="card" tabindex="0">
+  <!-- CARD -->
+  <article class="card">
     <h2>1978</h2>
     <h3>8086 Processor</h3>
+
     <div class="img-hover">
       <img src="img/3.jpg" loading="lazy" class="lazy-img"
-           alt="Intel 8086 processor architecture">
-      <div class="img-overlay" aria-hidden="true">
-        <p>Establishes x86 architecture that powers modern computers.</p>
+           alt="Intel 8086 processor">
+      <div class="img-overlay">
+        <p>
+          Establishes x86 architecture that powers modern computers.
+        </p>
       </div>
     </div>
   </article>
 
-  <article class="card" tabindex="0">
+  <!-- CARD -->
+  <article class="card">
     <h2>1985</h2>
     <h3>386 Processor</h3>
+
     <div class="img-hover">
       <img src="img/4.jpg" loading="lazy" class="lazy-img"
-           alt="Intel 386 processor chip">
-      <div class="img-overlay" aria-hidden="true">
-        <p>Introduces 32-bit architecture and advances PC performance.</p>
+           alt="Intel 386 processor">
+      <div class="img-overlay">
+        <p>
+          Introduces 32-bit architecture and advances PC performance.
+        </p>
       </div>
     </div>
   </article>
 
 </section>
 
-<section class="newsletter" aria-labelledby="newsletter-title">
+<!-- NEWSLETTER -->
+<section class="newsletter">
   <h2 id="newsletter-title">Subscribe to our Sustainability Newsletter</h2>
 
-  <form aria-label="Newsletter signup form">
-    <label for="name">Full Name</label>
-    <input id="name" name="name" type="text" required />
-
-    <label for="email">Email Address</label>
-    <input id="email" name="email" type="email" required />
-
-    <button type="submit">Subscribe</button>
+  <form>
+    <input id="emailInput" type="email" placeholder="Enter your email" required />
+    <button id="subscribeBtn" type="submit">Subscribe</button>
   </form>
 </section>
 
 </main>
 
 <footer>
-  <p>Scroll to view timeline | Hover or focus on images to learn more!</p>
+  <p>Scroll to view timeline | Hover over images to learn more!</p>
 </footer>
 
 <script>
+/* Lazy Load */
 document.querySelectorAll(".lazy-img").forEach(img => {
-  if (img.complete) {
-    img.classList.add("loaded");
-  } else {
-    img.addEventListener("load", () => {
-      img.classList.add("loaded");
-    });
-  }
+  if (img.complete) img.classList.add("loaded");
+  else img.addEventListener("load", () => img.classList.add("loaded"));
 });
 
-function setRTL(enabled) {
-  document.documentElement.dir = enabled ? "rtl" : "ltr";
+/* Language Toggle */
+let currentLang = "en";
+
+const t = {
+  en: {
+    title: "Sustainability Through the Ages",
+    subtitle: "Explore Intel's journey through time, discovering how innovation has shaped a more sustainable future.",
+    newsletter: "Subscribe to our Sustainability Newsletter",
+    subscribe: "Subscribe",
+    email: "Enter your email",
+    toggle: "العربية"
+  },
+  ar: {
+    title: "الاستدامة عبر العصور",
+    subtitle: "استكشف رحلة إنتل عبر الزمن واكتشف كيف ساهم الابتكار في تشكيل مستقبل أكثر استدامة.",
+    newsletter: "اشترك في نشرتنا الإخبارية للاستدامة",
+    subscribe: "اشترك",
+    email: "أدخل بريدك الإلكتروني",
+    toggle: "English"
+  }
+};
+
+function setLang(lang) {
+  document.documentElement.lang = lang;
+  document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+
+  document.getElementById("title").textContent = t[lang].title;
+  document.getElementById("subtitle").textContent = t[lang].subtitle;
+  document.getElementById("newsletter-title").textContent = t[lang].newsletter;
+  document.getElementById("subscribeBtn").textContent = t[lang].subscribe;
+  document.getElementById("emailInput").placeholder = t[lang].email;
+  document.getElementById("langToggle").textContent = t[lang].toggle;
 }
+
+document.getElementById("langToggle").onclick = () => {
+  currentLang = currentLang === "en" ? "ar" : "en";
+  setLang(currentLang);
+};
 </script>
 
 </body>
 </html>
-
 
