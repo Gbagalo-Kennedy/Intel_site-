@@ -1,66 +1,131 @@
-/* LANGUAGE TOGGLE */
-.lang-toggle {
-  margin-top: 1.5rem;
-  padding: .6rem 1.2rem;
-  border-radius: 8px;
-  border: none;
-  background: white;
-  color: #003c71;
-  font-weight: 600;
-  cursor: pointer;
+/* Add your CSS here */
+/* -------------------- */
+/* Global Reset & Base */
+/* -------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
 }
 
-/* RTL TRUE BEHAVIOR */
-html[dir="rtl"] body {
-  direction: rtl;
-  text-align: right;
+body {
+  background-color: #f4f6f8;
+  color: #222;
+  line-height: 1.6;
 }
 
-html[dir="rtl"] header {
-  text-align: center;
-}
-
-html[dir="rtl"] section {
-  flex-direction: row-reverse;
-}
-
-html[dir="rtl"] .card {
-  text-align: right;
-}
-
-html[dir="rtl"] .img-overlay {
-  text-align: right;
-}
-
-/* NEWSLETTER RTL MIRROR */
-.newsletter form {
+/* -------------------- */
+/* Hero / Header */
+/* -------------------- */
+header {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0071c5, #003c71);
   display: flex;
+  align-items: center;
   justify-content: center;
-  gap: 1rem;
-}
-
-html[dir="rtl"] .newsletter form {
-  flex-direction: row-reverse;
-}
-
-.newsletter input {
-  min-width: 260px;
-  padding: .7rem;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-}
-
-.newsletter button {
-  padding: .7rem 1.5rem;
-  border-radius: 8px;
-  border: none;
-  background: #0071c5;
+  text-align: center;
   color: white;
-  cursor: pointer;
+  padding: 2rem;
 }
 
-/* BETTER RTL FONT FEEL */
-html[dir="rtl"] body {
-  font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+header div {
+  max-width: 700px;
+}
+
+header img {
+  width: 130px;
+  margin-bottom: 1.5rem;
+}
+
+header h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+header p {
+  font-size: 1.1rem;
+  opacity: 0.95;
+}
+
+/* -------------------- */
+/* Timeline Section */
+/* -------------------- */
+section {
+  display: flex;
+  gap: 2rem;
+  padding: 4rem 2rem;
+  overflow-x: auto;
+}
+
+/* Timeline Cards */
+section > div {
+  min-width: 280px;
+  background-color: white;
+  border-radius: 14px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* ✅ Timeline Card Images (ADDED) */
+section > div img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin: 0.8rem 0;
+}
+
+/* Hover effect */
+section > div:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.15);
+}
+
+/* Year */
+section h2 {
+  color: #0071c5;
+  font-size: 1.8rem;
+  margin-bottom: 0.3rem;
+}
+
+/* Title */
+section h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.8rem;
+  color: #003c71;
+}
+
+/* Description */
+section p {
+  font-size: 0.95rem;
+  color: #444;
+}
+
+/* Scroll Hint */
+body > p {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+/* -------------------- */
+/* Mobile Layout */
+/* -------------------- */
+@media (max-width: 900px) {
+  header h1 {
+    font-size: 2.2rem;
+  }
+
+  section {
+    flex-direction: column;
+    overflow-x: visible;
+  }
+
+  section > div {
+    width: 100%;
+  }
 }
 
