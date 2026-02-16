@@ -3,13 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Intel: Sustainability Through the Ages</title>
+  <title>Sustainability Through the Ages</title>
   <link rel="stylesheet" href="main.css" />
 </head>
 
 <body>
 
-<!-- Header -->
 <header>
   <div>
     <img src="img/intel-header-logo.svg" alt="Intel Logo" />
@@ -21,78 +20,72 @@
   </div>
 </header>
 
-<!-- Timeline -->
 <section>
 
-  <!-- Card Example (Repeat Pattern For All Cards) -->
-  <div>
+  <!-- CARD -->
+  <div class="card">
     <h2>1968</h2>
     <h3>Intel Founded</h3>
-    <img src="img/1.jpg" loading="lazy" class="lazy-img" alt="">
-    <p>Intel is founded, starting decades of innovation.</p>
+
+    <div class="img-hover">
+      <img src="img/1.jpg" loading="lazy" class="lazy-img" alt="">
+      <div class="img-overlay">
+        <p>
+          Intel is founded, starting decades of innovation and technology leadership.
+        </p>
+      </div>
+    </div>
   </div>
 
-  <div>
+  <!-- CARD -->
+  <div class="card">
     <h2>1971</h2>
     <h3>First Microprocessor</h3>
-    <img src="img/2.jpg" loading="lazy" class="lazy-img" alt="">
-    <p>The 4004 launches the microprocessor revolution.</p>
+
+    <div class="img-hover">
+      <img src="img/2.jpg" loading="lazy" class="lazy-img" alt="">
+      <div class="img-overlay">
+        <p>
+          Intel debuts the 4004, the world's first commercial microprocessor.
+        </p>
+      </div>
+    </div>
   </div>
 
-  <div>
+  <!-- CARD -->
+  <div class="card">
     <h2>1978</h2>
     <h3>8086 Processor</h3>
-    <img src="img/3.jpg" loading="lazy" class="lazy-img" alt="">
-    <p>Establishes x86 architecture still used today.</p>
+
+    <div class="img-hover">
+      <img src="img/3.jpg" loading="lazy" class="lazy-img" alt="">
+      <div class="img-overlay">
+        <p>
+          Establishes x86 architecture that powers modern computers.
+        </p>
+      </div>
+    </div>
   </div>
 
-  <div>
+  <!-- CARD -->
+  <div class="card">
     <h2>1985</h2>
     <h3>386 Processor</h3>
-    <img src="img/4.jpg" loading="lazy" class="lazy-img" alt="">
-    <p>Introduces 32-bit computing to PCs.</p>
-  </div>
 
-  <div>
-    <h2>2006</h2>
-    <h3>Peak GHG Emissions</h3>
-    <img src="img/5.jpg" loading="lazy" class="lazy-img" alt="">
-    <p>Marks peak emissions before sustainability improvements.</p>
-  </div>
-
-  <div>
-    <h2>2020</h2>
-    <h3>RISE Strategy</h3>
-    <img src="img/6.jpg" loading="lazy" class="lazy-img" alt="">
-    <p>Launch of Responsible, Inclusive, Sustainable strategy.</p>
-  </div>
-
-  <div>
-    <h2>2022</h2>
-    <h3>Net-Zero Goal</h3>
-    <img src="img/7.jpg" loading="lazy" class="lazy-img" alt="">
-    <p>Commitment to net-zero emissions by 2040.</p>
-  </div>
-
-  <div>
-    <h2>2023</h2>
-    <h3>Renewable Electricity</h3>
-    <img src="img/8.jpg" loading="lazy" class="lazy-img" alt="">
-    <p>99% renewable electricity worldwide.</p>
-  </div>
-
-  <div>
-    <h2>2024</h2>
-    <h3>Sustainability Summit</h3>
-    <img src="img/9.jpg" loading="lazy" class="lazy-img" alt="">
-    <p>First global sustainability summit hosted.</p>
+    <div class="img-hover">
+      <img src="img/4.jpg" loading="lazy" class="lazy-img" alt="">
+      <div class="img-overlay">
+        <p>
+          Introduces 32-bit architecture and advances PC performance.
+        </p>
+      </div>
+    </div>
   </div>
 
 </section>
 
-<p>Scroll to view timeline | Hover over cards to learn more!</p>
+<p>Scroll to view timeline | Hover over images to learn more!</p>
 
-<!-- Lazy Load Animation Script -->
 <script>
 document.querySelectorAll(".lazy-img").forEach(img => {
   if (img.complete) {
