@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,9 +9,9 @@
 
 <body>
 
-<header>
+<header role="banner">
   <div>
-    <img src="img/intel-header-logo.svg" alt="Intel Logo" />
+    <img src="img/intel-header-logo.svg" alt="Intel corporate logo" />
     <h1>Sustainability Through the Ages</h1>
     <p>
       Explore Intel's journey through time, discovering how innovation
@@ -20,71 +20,79 @@
   </div>
 </header>
 
-<section>
+<main>
 
-  <!-- CARD -->
-  <div class="card">
+<section aria-label="Intel Sustainability Timeline">
+
+  <article class="card" tabindex="0">
     <h2>1968</h2>
     <h3>Intel Founded</h3>
-
     <div class="img-hover">
-      <img src="img/1.jpg" loading="lazy" class="lazy-img" alt="">
-      <div class="img-overlay">
-        <p>
-          Intel is founded, starting decades of innovation and technology leadership.
-        </p>
+      <img src="img/1.jpg" loading="lazy" class="lazy-img"
+           alt="Early Intel team and founding era">
+      <div class="img-overlay" aria-hidden="true">
+        <p>Intel is founded, starting decades of innovation and technology leadership.</p>
       </div>
     </div>
-  </div>
+  </article>
 
-  <!-- CARD -->
-  <div class="card">
+  <article class="card" tabindex="0">
     <h2>1971</h2>
     <h3>First Microprocessor</h3>
-
     <div class="img-hover">
-      <img src="img/2.jpg" loading="lazy" class="lazy-img" alt="">
-      <div class="img-overlay">
-        <p>
-          Intel debuts the 4004, the world's first commercial microprocessor.
-        </p>
+      <img src="img/2.jpg" loading="lazy" class="lazy-img"
+           alt="Intel 4004 microprocessor chip">
+      <div class="img-overlay" aria-hidden="true">
+        <p>Intel debuts the 4004, the world's first commercial microprocessor.</p>
       </div>
     </div>
-  </div>
+  </article>
 
-  <!-- CARD -->
-  <div class="card">
+  <article class="card" tabindex="0">
     <h2>1978</h2>
     <h3>8086 Processor</h3>
-
     <div class="img-hover">
-      <img src="img/3.jpg" loading="lazy" class="lazy-img" alt="">
-      <div class="img-overlay">
-        <p>
-          Establishes x86 architecture that powers modern computers.
-        </p>
+      <img src="img/3.jpg" loading="lazy" class="lazy-img"
+           alt="Intel 8086 processor architecture">
+      <div class="img-overlay" aria-hidden="true">
+        <p>Establishes x86 architecture that powers modern computers.</p>
       </div>
     </div>
-  </div>
+  </article>
 
-  <!-- CARD -->
-  <div class="card">
+  <article class="card" tabindex="0">
     <h2>1985</h2>
     <h3>386 Processor</h3>
-
     <div class="img-hover">
-      <img src="img/4.jpg" loading="lazy" class="lazy-img" alt="">
-      <div class="img-overlay">
-        <p>
-          Introduces 32-bit architecture and advances PC performance.
-        </p>
+      <img src="img/4.jpg" loading="lazy" class="lazy-img"
+           alt="Intel 386 processor chip">
+      <div class="img-overlay" aria-hidden="true">
+        <p>Introduces 32-bit architecture and advances PC performance.</p>
       </div>
     </div>
-  </div>
+  </article>
 
 </section>
 
-<p>Scroll to view timeline | Hover over images to learn more!</p>
+<section class="newsletter" aria-labelledby="newsletter-title">
+  <h2 id="newsletter-title">Subscribe to our Sustainability Newsletter</h2>
+
+  <form aria-label="Newsletter signup form">
+    <label for="name">Full Name</label>
+    <input id="name" name="name" type="text" required />
+
+    <label for="email">Email Address</label>
+    <input id="email" name="email" type="email" required />
+
+    <button type="submit">Subscribe</button>
+  </form>
+</section>
+
+</main>
+
+<footer>
+  <p>Scroll to view timeline | Hover or focus on images to learn more!</p>
+</footer>
 
 <script>
 document.querySelectorAll(".lazy-img").forEach(img => {
@@ -96,8 +104,13 @@ document.querySelectorAll(".lazy-img").forEach(img => {
     });
   }
 });
+
+function setRTL(enabled) {
+  document.documentElement.dir = enabled ? "rtl" : "ltr";
+}
 </script>
 
 </body>
 </html>
+
 
